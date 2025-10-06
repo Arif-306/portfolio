@@ -1,0 +1,211 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Muhammad-Arif-Anees</title>
+
+  <!-- Google Fonts -->
+ <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <!-- GSAP for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js" defer></script>
+  
+  <!-- Main JS -->
+  <script src="{% static 'js/script.js' %}" defer>
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
+</head>
+<body>
+
+  
+
+  <!-- HERO SECTION -->
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h1 class="headline">
+         <strong>𝓜𝓾𝓱𝓪𝓶𝓶𝓪𝓭 𝓐𝓻𝓲𝓯 𝓐𝓷𝓮𝓮𝓼</strong>
+            <span class="highlight">AI/ML Developer</span>
+          </h1>
+          
+          <!-- Project button -->
+<!-- Project Button in hero-left -->
+<a href="#projects" class="cta project-btn" id="openProjects">View Projects</a>
+<!-- New Skills Button (same style) -->
+<a href="#skills" class="cta project-btn" id="openSkills">Skills</a>
+
+
+
+        </div>
+        <div class="hero-right">
+          <div class="orbit-wrap" id="orbitWrap">
+            <div class="orbit-center">
+              <div class="center-count">2+ Years</div>
+              <div class="center-sub">Experience</div>
+            </div>
+            <svg class="orbits" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet">
+              <g transform="translate(300,300)">
+                <circle class="ring ring1" r="200"></circle>
+                <circle class="ring ring2" r="140"></circle>
+                <circle class="ring ring3" r="80"></circle>
+              </g>
+            </svg>
+            <div class="orbit-items">
+              <img src="{% static 'images/github.png' %}" class="orbit-item" data-orbit="200" alt="avatar1">
+              <img src="{% static 'images/git.png' %}" class="orbit-item" data-orbit="140" alt="avatar2">
+              <img src="{% static 'images/python.png' %}" class="orbit-item" data-orbit="80" alt="avatar3">
+              <img src="{% static 'images/tensorflow.png' %}" class="orbit-item" data-orbit="200" alt="avatar4">
+              <img src="{% static 'images/docker.png' %}" class="orbit-item" data-orbit="140" alt="avatar5">
+              <img src="{% static 'images/pytorch.png' %}" class="orbit-item" data-orbit="80" alt="avatar6">
+            </div>
+          </div>
+          <div class="partners">
+  <!-- Button 1 -->
+    <a href="https://www.linkedin.com/in/arif-anis-1742b6341/" class="partner-btn">
+    <img src="{% static 'images/linkedin-sign.png' %}" alt="partner1">
+  </a>
+
+  <!-- Button 2 -->
+    <a href="https://www.instagram.com/i.muhammad.arif_/" class="partner-btn">
+    <img src="{% static 'images/instagram.png' %}" alt="partner2">
+  </a>
+
+  <!-- Button 3 -->
+    <a href="https://github.com/Arif-306" class="partner-btn">
+    <img src="{% static 'images/github.png' %}" alt="partner3">
+  </a>
+
+  <!-- Button 4 -->
+    <a href="https://www.upwork.com/freelancers/~015baf6060d5bb4c44" class="partner-btn">
+    <img src="{% static 'images/upwork.png' %}" alt="partner4">
+  </a>
+</div>
+
+        </div>
+      </div>
+    </section>
+    <section class="spacer"></section>
+  </main>
+
+
+  <!-- SKILLS SECTION -->
+
+<section class="skills-section container" id="skills">
+  <h2 class="page-title">Skills</h2>
+  <p class="page-sub">Technologies & practical projects</p>
+
+  <div class="skills-grid" id="skillsGrid">
+
+  </div>
+</section>
+
+
+
+<!-- Project  SECTION -->
+<section id="projects" class="projects-section">
+  <div class="container">
+    <h2 class="section-title">My Projects</h2>
+    <p class="section-sub">Flip the cards to watch project demos.</p>
+
+    <div class="cards-grid">
+      <!-- Project Card 1 -->
+      <article class="card">
+        <div class="card-inner">
+          <!-- Front Side -->
+          <div class="card-front">
+            <h3>Face Recognition Attendance System </h3>
+            <p>Python + Open CV </p>
+          </div>
+
+          <!-- Back Side (Video) -->
+          <div class="card-back">
+            <video width="100%" height="100%" controls>
+             <source src="{% static 'videos/project-1.mp4' %}" type="video/mp4">             
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project Card 2 -->
+      <article class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <h3>AI provisioning System</h3>
+            <p>Python + django + XG Boost Algo</p>
+          </div>
+          <div class="card-back">
+            <video width="100%" height="100%" controls>
+             <source src="{% static 'videos/project-2.mp4' %}" type="video/mp4">             
+            </video>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- Project Card 3 -->
+      <article class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <h3>AI Chatbot</h3>
+            <p>Python + NLP + Groq API </p>
+          </div>
+          <div class="card-back">
+            <video width="100%" height="100%" controls>
+             <source src="{% static 'videos/project-3.mp4' %}" type="video/mp4">             
+            </video>
+          </div>
+        </div>
+      </article>
+
+<!-- Project Card 4 -->
+      <article class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <h3>ISP Website</h3>
+            <p>HTML + CSS + JS</p>
+          </div>
+          <div class="card-back">
+            <video width="100%" height="100%" controls>
+             <source src="{% static 'videos/project-4.mp4' %}" type="video/mp4">             
+            </video>
+          </div>
+        </div>
+      </article>
+
+
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- PARALLAX STARS BACKGROUND -->
+<div class="stars" aria-hidden="true">
+  <div class="star-layer layer-back"></div>
+  <div class="star-layer layer-mid"></div>
+  <div class="star-layer layer-front"></div>
+</div>
+
+
+
+
+
+
+</body>
+</html>

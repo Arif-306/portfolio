@@ -1,0 +1,717 @@
+/* style.css
+   Global styles and theme (black & red / purple gradient futuristic)
+   Comments included to explain each section for your edits.
+*/
+
+:root{
+  --bg-grad: #000000;   /* plain black background */
+
+--glass: rgba(217,217,217,0.04);  /* #D9D9D9 with transparency */
+--muted: #ffffff;  /* light grey for secondary text */
+--accent: #ffffff;  /* highlight color */
+--glass-border: #D9D9D9;   /* pure black */
+
+  --container: 1200px;
+}
+
+body {
+  background: #000000; /* Puri website ka background black */
+}
+
+.skill-card {
+  background: transparent; /* card container transparent hoga */
+  perspective: 1200px;
+}
+
+.skill-card .card-front,
+.skill-card .card-back {
+  background: #404040; /* cards grey color honge */
+  color: #D9D9D9;
+  border: 1px solid rgba(166,166,166,0.3);
+}
+
+
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; font-family:'Inter',system-ui,Arial; color:white; background:var(--bg-grad); -webkit-font-smoothing:antialiased}
+.container{max-width:var(--container); margin:0 auto; padding:24px}
+
+
+
+/* HERO SECTION */
+.hero{padding-top:110px; min-height:calc(100vh - 120px); display:flex; align-items:center}
+.hero-inner{display:grid; grid-template-columns:1fr 560px; gap:40px; align-items:center}
+
+/* Left: Text */
+.hero-left{max-width:680px}
+.headline{font-weight:800; line-height:1.02; font-size:48px; margin:0 0 16px; letter-spacing:-0.6px}
+.headline .highlight{display:block; color:white; background:linear-gradient(90deg,#fff 0%, #fff 60%); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:900}
+.subtext{color:var(--muted); font-weight:500; margin-bottom:20px}
+.cta-row{display:flex; gap:12px; margin-bottom:12px}
+.cta{padding:12px 18px; border-radius:10px; text-decoration:none; font-weight:700}
+.cta.primary{background:linear-gradient(90deg,var(--accent),#ff6a8a); color:white}
+.cta.ghost{background:transparent; color:white; border:1px solid rgba(255,255,255,0.06)}
+
+/* small bubble */
+.small-bubble{display:inline-block; margin-top:10px; background:rgba(255,255,255,0.06); padding:8px 12px; border-radius:18px; color:white; font-weight:600; box-shadow:0 6px 18px rgba(0,0,0,0.45)}
+
+/* Right: Orbit / circle visual */
+.hero-right{display:flex; flex-direction:column; align-items:center; gap:24px}
+.orbit-wrap{position:relative; width:520px; height:520px; display:flex; align-items:center; justify-content:center}
+.orbits{position:absolute; inset:0; width:100%; height:100%; pointer-events:none}
+.ring{fill:none; stroke:linear-gradient(90deg,#fff,#000); stroke-opacity:0.03}
+.ring1{stroke:rgba(255,255,255,0.03); stroke-width:1.5}
+.ring2{stroke:rgba(255,255,255,0.02); stroke-width:1}
+.ring3{stroke:rgba(255,255,255,0.02); stroke-width:0.8}
+
+/* center label */
+.orbit-center{position:absolute; width:180px; height:180px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; backdrop-filter:blur(6px); background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.06)); border:1px solid var(--glass-border); box-shadow:0 12px 40px rgba(0,0,0,0.6)}
+.center-count{font-size:28px; font-weight:800}
+.center-sub{font-size:12px; color:var(--muted)}
+
+/* orbit items (avatars/logos) */
+.orbit-items{position:absolute; width:100%; height:100%}
+.orbit-item{position:absolute; width:72px; height:72px; border-radius:50%; object-fit:cover; box-shadow:0 8px 22px rgba(0,0,0,0.6); border:2px solid rgba(255,255,255,0.06); transform-origin:center; cursor:pointer; transition:transform .25s ease, box-shadow .25s}
+.orbit-item:hover{transform:scale(1.12); box-shadow:0 18px 40px rgba(0,0,0,0.7)}
+
+/* partners row under orbit */
+.partners{display:flex; gap:22px; align-items:center; margin-top:8px}
+/* Partners buttons styling */
+.partner-btn img {
+  width: 40px; /* old: 80px, increase as needed */
+  height: auto; /* maintain aspect ratio */
+  cursor: pointer;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.partner-btn img:hover {
+  transform: scale(1.1); /* optional hover zoom */
+  filter: brightness(1.2);
+}
+
+
+/* Footer */
+.footer{padding:22px 0; border-top:1px solid rgba(255,255,255,0.03); margin-top:40px}
+.logo-small{height:26px}
+
+/* SECOND PAGE */
+.second-page .projects-hero{padding-top:110px; padding-bottom:60px}
+.page-title{font-size:28px; font-weight:800; margin:0 0 6px}
+.page-sub{color:var(--muted); margin-bottom:24px}
+
+/* cards grid */
+.cards-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06)); border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,0.04); box-shadow:0 10px 30px rgba(0,0,0,0.6); transition:transform .35s ease, box-shadow .35s}
+.card:hover{transform:translateY(-10px); box-shadow:0 26px 60px rgba(0,0,0,0.8)}
+.card-media{position:relative; height:180px; overflow:hidden}
+.card-media img{width:100%; height:100%; object-fit:cover}
+.card-play{position:absolute; right:16px; bottom:16px; background:linear-gradient(90deg,var(--accent),#ff6a8a); width:46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:18px}
+.card-body{padding:16px}
+.card-body h3{margin:0 0 8px; font-size:18px}
+.card-body p{margin:0; color:var(--muted)}
+
+/* modal */
+.video-modal{position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,0.65); z-index:200}
+.video-modal.active{display:flex}
+.video-modal-inner{width:min(1100px,95%); background:transparent; position:relative}
+.close-modal{position:absolute; right:-10px; top:-10px; background:white; color:#111; border-radius:50%; width:36px; height:36px; border:0; font-weight:700}
+
+/* RESPONSIVE */
+@media (max-width:1100px){
+  .hero-inner{grid-template-columns:1fr 420px}
+  .headline{font-size:40px}
+  .orbit-wrap{width:420px; height:420px}
+  .orbit-item{width:64px;height:64px}
+  .cards-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:780px){
+  .nav-links{display:none}
+  .mobile-toggle{display:inline-block}
+  .hero-inner{grid-template-columns:1fr; gap:20px}
+  .hero-right{order:-1}
+  .orbit-wrap{width:320px;height:320px}
+  .headline{font-size:32px}
+  .cards-grid{grid-template-columns:1fr}
+  .container{padding:16px}
+  .partners{display:none}
+  .auth .btn-join{display:none}
+  .small-bubble{display:none}
+}
+
+/* mobile menu */
+.mobile-menu{position:fixed; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.8), rgba(0,0,0,0.95)); z-index:150; display:none; padding:28px}
+.mobile-menu.active{display:block}
+.mobile-menu .close-mobile{background:transparent; border:0; color:white; font-size:24px; margin-bottom:12px}
+.mobile-nav{display:flex; flex-direction:column; gap:14px}
+.mobile-nav a{color:white; text-decoration:none; font-size:18px}
+
+
+
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hero-inner {
+    flex-direction: column; /* Hero left & right stack vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-left {
+    margin-bottom: 30px;
+  }
+
+  .hero-right {
+    margin-top: 20px;
+  }
+
+  .orbit-wrap svg.orbits {
+    width: 300px;
+    height: 300px;
+  }
+
+  .orbit-wrap .orbit-items img {
+    width: 60px; /* smaller orbit items */
+  }
+
+  .partners {
+    flex-wrap: wrap; /* buttons wrap to next line if needed */
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .partner-btn img {
+    width: 80px; /* smaller on mobile */
+  }
+
+  .cta-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cta-row a {
+    width: 100%; /* buttons full width on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-inner {
+    padding: 0 15px;
+  }
+
+  .headline {
+    font-size: 1.8rem;
+  }
+
+  .hero-left p.subtext {
+    font-size: 0.9rem;
+  }
+
+  .orbit-wrap svg.orbits {
+    width: 220px;
+    height: 220px;
+  }
+
+  .orbit-wrap .orbit-items img {
+    width: 50px;
+  }
+
+  .partner-btn img {
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .headline {
+    font-size: 1.5rem;
+  }
+
+  .hero-left .cta-row a {
+    font-size: 0.9rem;
+  }
+
+  .orbit-wrap svg.orbits {
+    width: 180px;
+    height: 180px;
+  }
+
+  .orbit-wrap .orbit-items img {
+    width: 40px;
+  }
+
+  .partner-btn img {
+    width: 50px;
+  }
+}
+
+
+
+.cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px; /* space between text and arrow */
+  transition: transform 0.3s;
+}
+
+.cta a:hover {
+  transform: translateX(5px); /* arrow slides slightly on hover */
+}
+
+
+
+/* Make orbit container responsive */
+.orbit-wrap {
+  width: 100%;
+  max-width: 400px; /* adjust for mobile */
+  height: auto;
+  aspect-ratio: 1 / 1; /* keeps circle perfect */
+  position: relative;
+  margin: 0 auto;
+}
+
+/* Orbit items images responsive */
+.orbit-wrap .orbit-items img {
+  width: 50px; /* mobile friendly size */
+  height: 50px;
+  object-fit: contain; /* prevents stretching */
+}
+
+
+
+/* Partners responsive */
+.partners {
+  display: flex;
+  flex-wrap: wrap; /* allows buttons to move to next line */
+  justify-content: center; /* center align */
+  gap: 15px; /* space between buttons */
+  margin-top: 20px;
+}
+
+
+/* Mobile only */
+@media (max-width: 768px) {
+  .partners {
+    position: fixed;     /* fix to screen */
+    bottom: 10px;        /* 10px gap from bottom */
+    left: 0;
+    width: 100%;         /* full width */
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background: rgba(0,0,0,0.05); /* optional subtle background */
+    padding: 10px 0;
+    z-index: 999;        /* appear above other content */
+  }
+
+  .partner-btn img {
+    width: 50px;         /* mobile friendly size */
+    height: auto;
+  }
+}
+
+
+
+
+.partner-btn img {
+  width: 30px; /* mobile size */
+  height: auto;
+  display: block;
+}
+
+.btn-join {
+  font-family: 'Great Vibes', cursive;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .hero-right {
+    margin-top: -50px; /* animation upar shift */
+  }
+
+  .orbit-wrap {
+    max-width: 300px;       /* mobile friendly size */
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .hero-inner {
+    display: flex;
+    flex-direction: column; /* vertical stacking */
+    align-items: center;
+    justify-content: space-between; /* push naam upar, animation neeche */
+    min-height:50vh; /* full screen height */
+  }
+
+  /* Naam upar */
+  .hero-left {
+    margin-top: -120px; /* upar thoda gap */
+    text-align: center;
+  }
+
+  /* Animation circle neeche */
+  .hero-right {
+    margin-top: auto; /* push to bottom of hero section */
+    margin-bottom: 120px; /* thoda bottom spacing */
+  }
+
+  /* Orbit container responsive */
+  .orbit-wrap {
+    max-width: 200px;
+    height: auto;
+  }
+
+  /* Partners buttons mobile bottom fix */
+  .partners {
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background: rgba(0,0,0,0.05);
+    padding: 10px 0;
+    z-index: 999;
+  }
+
+  .partner-btn img {
+    width: 30px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-left h1.headline {
+    font-size: 40px;       /* big size */
+    white-space: nowrap;    /* force single line */
+    overflow: hidden;       /* optional, cut if too long */
+    text-overflow: ellipsis; /* optional, if very long */
+    text-align: center;     /* center horizontally */
+  }
+
+  .hero-left h1.headline .highlight {
+    display: block;        /* AI/ML Developer alag line pe rahe */
+    font-size: 24px;       /* size for role */
+  }
+}
+
+/* Hero left project button */
+.hero-left .project-btn {
+  display: inline-block;
+  margin-top: 15px;        /* space below AI/ML Developer */
+  padding: 12px 25px;
+  background-color: #fdfdfd; /* red theme */
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.hero-left .project-btn:hover {
+  transform: scale(1.05);
+  background-color: #fcfbfb;
+    color: #000000;            /* text color change on hover */
+
+}
+
+
+
+@media (max-width: 768px) {
+  .hero-left {
+    position: absolute;
+    top: 10px;         /* screen top se distance */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+  }
+}
+
+
+
+
+
+
+/* SKILLS GRID */
+.skills-section { padding: 40px 0; }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
+
+/* CARD FLIP */
+.skill-card { perspective: 1200px; }
+.card-inner { position: relative; width:100%; height:280px; transform-style: preserve-3d; transition: transform .7s cubic-bezier(.2,.9,.3,1); border-radius:12px; overflow:visible; }
+.skill-card .card-front,
+.skill-card .card-back {
+  position: absolute; inset:0; backface-visibility: hidden; border-radius:12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+  border: 1px solid rgba(255,255,255,0.04);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; padding:18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+/* Hover flip (desktop only) */
+.skill-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+
+/* Back rotated */
+.skill-card .card-back { transform: rotateY(180deg); }
+
+/* Flip state */
+.skill-card.is-flipped .card-inner { transform: rotateY(180deg); }
+
+/* Visual (radial) */
+.skill-visual { width:120px; height:120px; margin-bottom:12px; }
+.radial { width:100%; height:100%; display:block; }
+.radial-bg { fill:none; stroke:rgba(255,255,255,0.06); stroke-width:10; }
+.radial-progress { fill:none; stroke:var(--accent); stroke-width:10; stroke-linecap:round; transform: rotate(-90deg); transform-origin:50% 50%; stroke-dasharray: 327; stroke-dashoffset: 327; }
+
+/* center percent */
+.radial-text { font-size:16px; fill:var(--muted); font-weight:800; }
+
+/* skill name */
+.skill-name { margin:6px 0 0; font-weight:800; font-size:18px; }
+
+/* back list */
+.proj-list { list-style:none; padding:0; margin:8px 0 12px; width:100%; text-align:left; max-height:110px; overflow:auto; }
+.proj-list li { margin:6px 0; font-weight:600; }
+.proj-list a { color: #fff; text-decoration:none; opacity:0.95; }
+
+/* small cta */
+.cta.small { display:inline-block; margin-top:8px; padding:8px 12px; border-radius:8px; background:linear-gradient(90deg,var(--accent),#ff6a8a); font-weight:700; text-decoration:none; }
+
+/* hover scale */
+.skill-card:hover .card-front { transform: translateY(-6px); transition: transform .25s ease; }
+
+/* MOBILE: click to flip (no hover) */
+@media (hover: none) {
+  .skill-card .card-front { cursor: pointer; }
+}
+@media (max-width: 768px) {
+  .skill-card {
+    width: 300px;   /* chhota width */
+    height: 200px;  /* chhota height */
+    padding: 20px;  /* kam padding */
+    font-size: 14px; /* text bhi chhota */
+  }
+
+  .skill-card h3 {
+    font-size: 16px; /* heading small */
+  }
+
+  .skill-card p {
+    font-size: 12px; /* paragraph small */
+  }
+}
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 120px;   /* yeh cards ke darmiyan ka gap hai */
+}
+.skill-card {
+  margin: 40px;  /* har card ke 4 taraf 10px space */
+}
+
+
+
+
+/* CARD FLIP */
+.skill-card { perspective: 1200px; }
+.card-inner { 
+  position: relative; 
+  width:140%; 
+  height:280px; 
+  transform-style: preserve-3d; 
+  transition: transform .7s cubic-bezier(.2,.9,.3,1); 
+  border-radius:12px; 
+  overflow:visible; 
+}
+
+.skill-card .card-front,
+.skill-card .card-back {
+  position: absolute; 
+  inset:0; 
+  backface-visibility: hidden; 
+  border-radius:12px;
+  background: #404040;  /* ✅ plain grey background instead of gradient */
+  border: 1px solid rgba(255,255,255,0.04);
+  display:flex; 
+  flex-direction:column; 
+  align-items:center; 
+  justify-content:center; 
+  padding:18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* Hover flip (desktop only) */
+.skill-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Back rotated */
+.skill-card .card-back { transform: rotateY(180deg); }
+
+/* Flip state */
+.skill-card.is-flipped .card-inner { transform: rotateY(180deg); }
+
+
+
+
+/* Mobile ke liye (cards chhote aur screen ke andar) */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr; /* ek row me ek card */
+    gap: 100px;
+  }
+
+  .skill-card {
+    max-width: 700%;   /* puri width use kare */
+    margin: 10 auto;
+  }
+}
+
+
+
+
+.radial-text {
+  font-size: 16px;
+  fill: var(--muted);
+  font-weight: 800;
+  text-anchor: middle;   /* text ko horizontal center kare */
+  dominant-baseline: middle; /* text ko vertical center kare */
+}
+
+
+
+
+
+/* Project Section Layout */
+.projects-section {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Card Flip Container */
+.card {
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Front Design */
+.card-front {
+  background: linear-gradient(135deg, #111, #222);
+  color: #fff;
+  font-size: 18px;
+}
+
+/* Back (Video) */
+.card-back {
+  background: #000;
+  transform: rotateY(180deg);
+}
+
+.card-back video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+
+
+/* ===== Parallax Stars Background ===== */
+.stars {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* clicks pass through */
+  z-index: 0; /* ensure content sits above */
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* Each layer full screen and absolute positioned stars inside it */
+.star-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* Individual star style (span elements will be created by JS) */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.85;
+  transform: translate3d(0,0,0);
+  will-change: transform, opacity;
+  box-shadow: 0 0 6px rgba(255,255,255,0.08);
+}
+
+/* subtle color variants */
+.star.small { opacity: 0.6; filter: blur(.2px); }
+.star.medium { opacity: 0.75; }
+.star.large { opacity: 0.95; box-shadow: 0 0 10px rgba(255,255,255,0.15); }
+
+/* Ensure your main page content is above stars */
+body > header,
+body > main,
+.container,
+.navbar {
+  position: relative;
+  z-index: 1;
+}
+
+/* Reduce star count & sizes on small screens for perf */
+@media (max-width: 768px) {
+  .star { opacity: 0.8; }
+}
+@media (max-width: 480px) {
+  .star { opacity: 0.7; }
+}
+
+
+
+
